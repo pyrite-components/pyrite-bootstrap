@@ -6,6 +6,7 @@ interface ButtonAttrs {
     pyClass: string;
     pyTitle: string;
     pyLink?: string;
+    pyTypeInput?: string;
     pyAriaPressed?: string,
     pyAutoComplete?: string
     pyDataToggle?: string;
