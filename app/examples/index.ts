@@ -1,1 +1,1 @@
-export {MainExample} from './Main/mainCtrl';
+export {Main} from './Main/mainCtrl';

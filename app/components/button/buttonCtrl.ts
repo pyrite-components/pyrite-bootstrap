@@ -1,4 +1,4 @@
-import { Component, Attributes, Render} from "pyrite";
+import { Component, Attributes} from "pyrite";
 import * as $ from "jquery";
 import { ButtonTmpl} from "./buttonTmpl";
 
@@ -14,7 +14,7 @@ interface ButtonAttrs {
     pyId?: string;
     pyName?: string;
     pyAction?: Function;
-    pyArgAction?: string | Array<any>;
+    pyArgAction?: any;
     pyState?: string;
     pyDisabled?: Boolean;
     pyTabIndex?: string;

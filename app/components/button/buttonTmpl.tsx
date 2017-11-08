@@ -63,6 +63,5 @@ export function ButtonTmpl(this: Button) {
                     onclick={this.onAction.bind(this)}> {this.attrs.pyTitle}
                 </button>;
     }
-
-    {button}
+    return button;
 }

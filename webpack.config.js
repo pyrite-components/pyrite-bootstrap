@@ -52,7 +52,7 @@ module.exports = {
 			}
 		}),
 		new HtmlWebpackPlugin({
-			title: 'Listing people',
+			title: 'Pyrite bootstrap',
 		})
 	]
 }

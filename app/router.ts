@@ -1,6 +1,6 @@
 import { Main } from "./examples";
 
 export const router = [{
-	path: '/',
+	path: '/home',
 	component: Main
-}
+}];

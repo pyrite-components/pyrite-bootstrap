@@ -5,5 +5,5 @@ import { router } from "./router";
 
 const pyrite = new Pyrite({
 	routes: router,
-	rootPath: "/list"
+	rootPath: "/home"
 });
