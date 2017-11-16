@@ -4,16 +4,14 @@
 	"description": "",
 	"main": "app/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build:server": "tsc",
-		"build:server:watch": "tsc -w",
-		"start:server": "nodemon lib/server",
-		"build:public:watch": "webpack --watch",
-		"start:public": "http-server dist",
-		"watch": "concurrently --kill-others \"npm run build:public:watch\" \"npm run start:public\""
+		"test:watch": "./node_modules/.bin/mocha --recursive -r source-map-support/register -r ts-node/register --bail --watch ./test/**/*.spec.ts --watch-extensions ts",
+		"test": "./node_modules/.bin/mocha --recursive -r ts-node/register --bail ./test/**/*.spec.ts",
+		"build": "./node_modules/typescript/bin/tsc",
+		"watch": "./node_modules/webpack/bin/webpack.js --watch",
+		"cover": "./node_modules/nyc/bin/nyc.js npm test"
 	},
-	"author": "Fabio Garcia",
-	"license": "ISC",
+	"author": "Francisco Jesus Navarro Cortes",
+	"license": "MIT",
 	"dependencies": {
 		"@types/bootstrap": "^3.3.36",
 		"@types/jquery": "^3.2.16",
@@ -36,11 +34,21 @@
 		"style-loader": "^0.19.0"
 	},
 	"devDependencies": {
+		"@types/chai": "^4.0.5",
+		"@types/mocha": "^2.2.44",
+		"@types/node": "^8.0.53",
+		"@types/sinon": "^4.0.0",
 		"browser-sync": "^2.18.13",
 		"browser-sync-webpack-plugin": "^1.2.0",
+		"chai": "^4.1.2",
 		"html-webpack-plugin": "^2.30.1",
+		"jsdom": "^11.3.0",
+		"jsdom-global": "^3.0.2",
+		"nyc": "^11.3.0",
+		"sinon": "^4.1.2",
 		"source-map-loader": "^0.2.1",
 		"ts-loader": "^3.1.1",
+		"ts-node": "^3.3.0",
 		"typescript": "^2.6.1",
 		"webpack": "^3.3.0"
 	}

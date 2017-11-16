@@ -8,9 +8,9 @@ export function ExampleTemplate(this: ExampleController) {
     const buttonExampl = `
         <div class='col-sm-2'>
             <Button 
-                pyTitle='Greet'
-                pyClass='btn btn-primary'
-                pyAction={this.onAction.bind(this)}>
+                title='Greet'
+                class='btn btn-primary'
+                action={this.onAction.bind(this)}>
             </Button>
         </div>
         <div class='col-sm-2'>{this.greet ? 'Hello world' : null}</div>`;
@@ -27,9 +27,9 @@ export function ExampleTemplate(this: ExampleController) {
                 </div> 
                 <div class='col-sm-2'>
                     <Button 
-                        pyTitle='Greet'
-                        pyClass='btn btn-primary'
-                        pyAction={this.onAction.bind(this)}>
+                        title='Greet'
+                        class='btn btn-primary'
+                        action={this.onAction.bind(this)}>
                     </Button>
                 </div>
                 <div class='col-sm-2'>{this.greet ? 'Hello world' : null}</div>
