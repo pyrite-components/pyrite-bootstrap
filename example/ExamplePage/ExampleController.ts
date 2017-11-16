@@ -1,8 +1,8 @@
 import { Component, Attributes} from "pyrite";
-import {MainTmpl} from './mainTmpl';
+import {ExampleTemplate} from './ExampleTemplate';
 
-@Component(MainTmpl)
-export class Main {
+@Component(ExampleTemplate)
+export class ExampleController {
     greet: boolean = false;
 
     onAction() {

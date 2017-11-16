@@ -2,7 +2,7 @@ import { Component, Attributes} from "pyrite";
 import * as $ from "jquery";
 import { ButtonTmpl} from "./buttonTmpl";
 
-interface ButtonAttrs {
+export interface ButtonAttrs {
     pyClass: string;
     pyTitle: string;
     pyLink?: string;
@@ -32,6 +32,7 @@ export class Button {
             $(this.attrs.pyId).button('dispose')
         }
 
-        this.attrs.pyAction(this.attrs.pyArgAction, event);
+        if (this.attrs.pyAction)
+            this.attrs.pyAction(this.attrs.pyArgAction, event);
     }
 }

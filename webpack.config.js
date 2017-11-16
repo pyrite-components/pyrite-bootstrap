@@ -4,7 +4,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: path.resolve(__dirname, './app/index'),
+	entry: path.resolve(__dirname, './example/index'),
 	devtool: 'source-map',
 	output: {
 		path: path.resolve(__dirname, './dist'),
