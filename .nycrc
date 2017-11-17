@@ -5,7 +5,7 @@
 		".tsx"
 	],
 	"include": [
-		"src/bootstrap/**/*.ts"
+		"src/button/*.ts"
 	],
 	"exclude": [
 		"**/*.d.ts"
