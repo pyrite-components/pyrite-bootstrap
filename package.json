@@ -7,16 +7,17 @@
 		"test:watch": "./node_modules/.bin/mocha --recursive -r source-map-support/register -r ts-node/register --bail --watch ./test/**/*.spec.ts --watch-extensions ts",
 		"test": "./node_modules/.bin/mocha --recursive -r ts-node/register --bail ./test/**/*.spec.ts",
 		"build": "./node_modules/typescript/bin/tsc",
-		"watch": "./node_modules/webpack/bin/webpack.js --watch",
-		"cover": "./node_modules/nyc/bin/nyc.js npm test"
+		"watch": "./node_modules/webpack/bin/webpack.js --watch"
 	},
 	"author": "Francisco Jesus Navarro Cortes",
 	"license": "MIT",
 	"dependencies": {
 		"@types/bootstrap": "^3.3.36",
+		"@types/chai-spies": "0.0.0",
 		"@types/jquery": "^3.2.16",
 		"@types/prismjs": "^1.6.5",
 		"bootstrap": "^4.0.0-beta.2",
+		"chai-spies": "^0.7.1",
 		"css-loader": "^0.28.7",
 		"file-loader": "^1.1.5",
 		"highlight": "^0.2.4",
