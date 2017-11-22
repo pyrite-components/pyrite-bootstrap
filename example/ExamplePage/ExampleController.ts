@@ -3,9 +3,18 @@ import {ExampleTemplate} from './ExampleTemplate';
 
 @Component(ExampleTemplate)
 export class ExampleController {
-    greet: boolean = false;
+    greet: Array<Boolean> = [];
+    checkedJs: boolean;
+    checkedHtml: boolean;
+    checkedCss: boolean,
 
-    onAction() {
-        this.greet =! this.greet;
+    $onInit() {
+        this.greet.fill(false, 0, 10);
+    }
+
+    onAction(element: number, event?: any) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.greet[element] =! this.greet[element];
     }
 }

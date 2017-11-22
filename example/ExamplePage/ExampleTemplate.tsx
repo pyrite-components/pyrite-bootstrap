@@ -5,15 +5,33 @@ import {Prism} from "pyrite-prism";
 
 export function ExampleTemplate(this: ExampleController) {
 
-    const buttonExampl = `
+    const simpleButtonExample = `
         <div class='col-sm-2'>
             <Button 
                 title='Greet'
                 class='btn btn-primary'
+                argAction='0'
                 action={this.onAction.bind(this)}>
             </Button>
         </div>
-        <div class='col-sm-2'>{this.greet ? 'Hello world' : null}</div>`;
+        <div class='col-sm-2'>{this.greet[0] ? 'Hello world' : null}</div>`;
+    
+    const inputButtonExample = `
+        <div class='col-sm-2'>
+            <Button 
+                title='Greet'
+                type='input'
+                argAction='1'
+                class='btn btn-secondary'
+                value='tilte'
+                name='greet'
+                id='id'
+                action={this.onAction.bind(this)}>
+            </Button>
+        </div>
+        <div class='col-sm-2'>{this.greet[1] ? 'Hello world' : null}</div>
+        <div>
+    `
 
     return (
         <div class='container'>
@@ -22,19 +40,72 @@ export function ExampleTemplate(this: ExampleController) {
             <h2>Button</h2>
 
             <div class='row'>
-                <div class='col-sm-2'>
+                <div class='col-sm-12'>
                     1. Simple Button:    
                 </div> 
                 <div class='col-sm-2'>
                     <Button 
                         title='Greet'
                         class='btn btn-primary'
+                        argAction='0'
                         action={this.onAction.bind(this)}>
                     </Button>
                 </div>
-                <div class='col-sm-2'>{this.greet ? 'Hello world' : null}</div>
-                <div>
-                    <Prism language='html' code={buttonExampl}></Prism>
+                <div class='col-sm-2'>{this.greet[0] ? 'Hello world' : null}</div>
+                <div class='col-sm-12'>
+                    <Prism language='html' code={simpleButtonExample}></Prism>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-sm-12'>
+                    1. Input Button:    
+                </div> 
+                <div class='col-sm-2'>
+                    <Button 
+                        title='Greet'
+                        type='input'
+                        argAction='1'
+                        class='btn btn-secondary'
+                        value='tilte'
+                        name='greet'
+                        id='id'
+                        action={this.onAction.bind(this)}>
+                    </Button>
+                </div>
+                <div class='col-sm-2'>{this.greet[1] ? 'Hello world' : null}</div>
+                <div class='col-sm-12'>
+                    <Prism language='html' code={inputButtonExample}></Prism>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-sm-12'>
+                    1. Input Checkbox Button:    
+                </div> 
+                <div class='col-sm-2'>
+                    <div class="btn-group" data-toggle="buttons">
+                        <Button 
+                            title='HTML'
+                            type='checkbox'
+                            checked={this.checkedHtml}
+                            class={'btn btn-primary' + (this.checkedHtml) ? ' active': ''}>
+                        </Button>
+                        <Button 
+                            title='CSS'
+                            type='checkbox'
+                            checked={this.checkedCss}
+                            class={'btn btn-primary' + (this.checkedCss) ? ' active': ''}>
+                        </Button>
+                        <Button 
+                            title='JS'
+                            type='checkbox'
+                            checked={this.checkedJs}
+                            class={'btn btn-primary' + (this.checkedJs) ? ' active': ''}>
+                        </Button>
+                    </div>
+                </div>
+                <div class='col-sm-2'>{this.greet[1] ? 'Hello world' : null}</div>
+                <div class='col-sm-12'>
+                    <Prism language='html' code={inputButtonExample}></Prism>
                 </div>
             </div>
         </div>

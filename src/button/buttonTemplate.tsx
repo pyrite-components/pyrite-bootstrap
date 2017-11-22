@@ -19,14 +19,13 @@ export function ButtonTemplate(this: ButtonController) {
             break;
         case 'checkbox':
             button = <label class={this.attrs.class}>
-                <input 
+                <input
                     type='checkbox'
                     checked={this.attrs.checked}
                     id={this.attrs.id}
                     name={this.attrs.name}
                     autocomplete={this.attrs.autoComplete}
-                    onclick={this.onAction.bind(this)}> {this.attrs.title}
-                </input>
+                    onclick={this.onAction.bind(this)}/> {this.attrs.title}
             </label>;
             break;
         case 'radio':
@@ -37,12 +36,12 @@ export function ButtonTemplate(this: ButtonController) {
                     id={this.attrs.id}
                     name={this.attrs.name}
                     autocomplete={this.attrs.autoComplete}
-                    onclick={this.onAction.bind(this)}> {this.attrs.title}
-                </input>
+                    onclick={this.onAction.bind(this)}/> {this.attrs.title}
             </label>;
             break;
         case 'input':
-            button= <input 
+            button= <input
+                class={this.attrs.class}
                 type={this.attrs.typeInput || 'submit'}
                 value={this.attrs.title}
                 id={this.attrs.id}
@@ -50,6 +49,7 @@ export function ButtonTemplate(this: ButtonController) {
                 autocomplete={this.attrs.autoComplete}
                 onclick={this.onAction.bind(this)}>
             </input>
+            break;
         default:
             button = 
                 <button 
