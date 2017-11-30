@@ -18,14 +18,14 @@ export function ButtonTemplate(this: ButtonController) {
                 </a>;
             break;
         case 'checkbox':
-            button = <label class={this.attrs.class}>
+            button = <label class={`${this.attrs.class}${this.attrs.checked ? ' active': ''}`}>
                 <input
                     type='checkbox'
                     checked={this.attrs.checked}
                     id={this.attrs.id}
                     name={this.attrs.name}
                     autocomplete={this.attrs.autoComplete}
-                    onclick={this.onAction.bind(this)}/> {this.attrs.title}
+                    onchange={(event: any) => this.onChecked(event)}/> {this.attrs.title}
             </label>;
             break;
         case 'radio':

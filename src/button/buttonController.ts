@@ -25,6 +25,10 @@ export interface ButtonAttrs {
 export class ButtonController {
     @Attributes attrs: ButtonAttrs;
 
+    onChecked(event: any) {
+        this.attrs.checked = event.target.checked;
+    }
+
     onAction(event: any) {
         if(this.attrs.state === 'toogle'){
             $(this.attrs.id).button('toogle')

@@ -4,9 +4,8 @@ import {ExampleTemplate} from './ExampleTemplate';
 @Component(ExampleTemplate)
 export class ExampleController {
     greet: Array<Boolean> = [];
-    checkedJs: boolean;
-    checkedHtml: boolean;
-    checkedCss: boolean,
+    form: any = {};
+    checkedCss: any;
 
     $onInit() {
         this.greet.fill(false, 0, 10);

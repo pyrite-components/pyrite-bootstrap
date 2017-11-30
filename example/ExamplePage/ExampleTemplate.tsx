@@ -31,7 +31,32 @@ export function ExampleTemplate(this: ExampleController) {
         </div>
         <div class='col-sm-2'>{this.greet[1] ? 'Hello world' : null}</div>
         <div>
-    `
+    `;
+
+    const checkboxButtonExample = `
+        <div class='col-sm-2'>
+            <div class='btn-group' data-toggle='buttons'>
+                <Button 
+                    title='HTML'
+                    type='checkbox'
+                    checked={this.form['html']}
+                    class='btn btn-primary'>
+                </Button>
+                <Button 
+                    title='CSS'
+                    type='checkbox'
+                    checked={this.form['css']}
+                    class='btn btn-primary'>
+                </Button>
+                <Button 
+                    title='JS'
+                    type='checkbox'
+                    checked={this.form['js']}
+                    class='btn btn-primary'>
+                </Button>
+            </div>
+        </div>
+    `;
 
     return (
         <div class='container'>
@@ -86,26 +111,25 @@ export function ExampleTemplate(this: ExampleController) {
                         <Button 
                             title='HTML'
                             type='checkbox'
-                            checked={this.checkedHtml}
-                            class={'btn btn-primary' + (this.checkedHtml) ? ' active': ''}>
+                            checked={this.form['html']}
+                            class='btn btn-primary'>
                         </Button>
                         <Button 
                             title='CSS'
                             type='checkbox'
-                            checked={this.checkedCss}
-                            class={'btn btn-primary' + (this.checkedCss) ? ' active': ''}>
+                            checked={this.form['css']}
+                            class='btn btn-primary'>
                         </Button>
                         <Button 
                             title='JS'
                             type='checkbox'
-                            checked={this.checkedJs}
-                            class={'btn btn-primary' + (this.checkedJs) ? ' active': ''}>
+                            checked={this.form['js']}
+                            class='btn btn-primary'>
                         </Button>
                     </div>
                 </div>
-                <div class='col-sm-2'>{this.greet[1] ? 'Hello world' : null}</div>
                 <div class='col-sm-12'>
-                    <Prism language='html' code={inputButtonExample}></Prism>
+                    <Prism language='html' code={checkboxButtonExample}></Prism>
                 </div>
             </div>
         </div>
